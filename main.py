@@ -8,7 +8,7 @@ try:
 except FileNotFoundError as error:
     print(error)
 
-location = "London"
+location = input("Please input the location, this can be postcode, zip code, area, etc: ")
 
 r = requests.get(f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={location}&aqi=no")
 
