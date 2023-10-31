@@ -14,4 +14,9 @@ r = requests.get(f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={lo
 
 json_r = json.loads(r.content)
 
-print(f"The current temperature in {location} is {json_r['current']['temp_c']}")
+option = input("Do you want to display in C or F: ").lower()
+
+if option == 'c':
+    print(f"The current temperature in {location} is {json_r['current']['temp_c']}C")
+elif option == 'f':
+    print(f"The current temperature in {location} is {json_r['current']['temp_f']}F")
